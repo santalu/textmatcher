@@ -35,11 +35,7 @@ class SingleRuleActivity : AppCompatActivity(R.layout.activity_single_rule) {
 
     button.setOnClickListener {
       val success = editText.replace("@mention")
-      Toast.makeText(
-        this,
-        if (success) R.string.target_at_selection else R.string.no_target_at_selection,
-        Toast.LENGTH_SHORT
-      ).show()
+      showToast(getString(if (success) R.string.target_at_selection else R.string.no_target_at_selection))
     }
   }
 }

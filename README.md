@@ -1,5 +1,8 @@
 # TextMatcher
 
+[![](https://www.jitpack.io/v/santalu/textmatcher.svg)](https://www.jitpack.io/#santalu/textmatcher)
+[![Build Status](https://travis-ci.org/santalu/textmatcher.svg?branch=master)](https://travis-ci.org/santalu/textmatcher)
+
 A simple text watcher that matches specific targets like `mention` or `hashtag` in a string by defining `rules`
 
 ## How It Works
@@ -44,7 +47,7 @@ There are 3 built-in styles for easy implementation. This can be changed in futu
 
 2. [`MentionRule`](https://github.com/santalu/textmatcher/blob/master/library/src/main/java/com/santalu/textmatcher/rule/MentionRule.kt) extends from `SimpleRule` and matches targets which starts with `@`
 
-3. [`HashtagRule`](https://github.com/santalu/textmatcher/blob/master/library/src/main/java/com/santalu/textmatcher/rule/HashtagRule.kt) extebds from `SimpleRule` and matches targets which starts with `#`
+3. [`HashtagRule`](https://github.com/santalu/textmatcher/blob/master/library/src/main/java/com/santalu/textmatcher/rule/HashtagRule.kt) extends from `SimpleRule` and matches targets which starts with `#`
 
 #### Widgets
 

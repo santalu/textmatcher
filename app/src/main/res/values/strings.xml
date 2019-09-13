@@ -1,0 +1,22 @@
+<resources>
+  <string name="app_name">TextMatcher</string>
+
+  <string name="title_single_rule">Single Rule Sample</string>
+  <string name="title_multi_rule">Multi Rule Sample</string>
+  <string name="title_custom_rule">Custom Rule Sample</string>
+  <string name="title_simple_text">TextView Sample</string>
+
+  <string name="no_match">No match</string>
+  <string name="no_mention">No mention</string>
+  <string name="no_hashtag">No hashtag</string>
+  <string name="no_target_at_selection">No match found at cursor position</string>
+  <string name="target_at_selection">A match found at cursor position and replaced</string>
+
+  <string name="hint_match">Enter any text with hashtag and mention</string>
+  <string name="hint_mention">Enter any text with mention</string>
+  <string name="hint_hashtag">Enter any text with hashtag</string>
+
+  <string name="action_replace">Replace</string>
+
+  <string name="sample_text">This is @mention and this is #hashtag. This is @another.mention which is not allowed if not specified manually in the #rule\'s #allowedCharacters</string>
+</resources>

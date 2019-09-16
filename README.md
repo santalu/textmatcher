@@ -41,7 +41,7 @@ There are 3 built-in styles for easy implementation. This can be changed in futu
 
 `Rule` is simply definition of target boundaries and matching conditions. It's also used to apply styles for matching targets.
 
-There are 3 built-in styles for easy implementation. This can be changed in future according to needs.
+There are 3 built-in rules for easy implementation. This can be changed in future according to needs.
 
 1. [`SimpleRule`](https://github.com/santalu/textmatcher/blob/master/library/src/main/java/com/santalu/textmatcher/rule/SimpleRule.kt) is a open class which takes `prefixes`, `allowedCharacters` and `style` as parameter which matches targets starting with `prefixes` and ending with space or any word breaking character.
 

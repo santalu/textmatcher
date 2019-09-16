@@ -4,9 +4,12 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.santalu.textmatcher.findMatches
 import com.santalu.textmatcher.rule.MentionRule
-import kotlinx.android.synthetic.main.activity_single_rule.button
+import com.santalu.textmatcher.style.MentionStyle
 import kotlinx.android.synthetic.main.activity_single_rule.editText
+import kotlinx.android.synthetic.main.activity_single_rule.replaceButton
+import kotlinx.android.synthetic.main.activity_single_rule.showAllButton
 import kotlinx.android.synthetic.main.activity_single_rule.textView
 
 /**
@@ -33,9 +36,14 @@ class SingleRuleActivity : AppCompatActivity(R.layout.activity_single_rule) {
     textView.setOnMatchClickListener { showToast(it) }
     editText.setOnMatchClickListener { showToast(it) }
 
-    button.setOnClickListener {
+    replaceButton.setOnClickListener {
       val success = editText.replace("@mention")
       showToast(getString(if (success) R.string.target_at_selection else R.string.no_target_at_selection))
+    }
+
+    showAllButton.setOnClickListener {
+      val mentions = editText.findMatches<MentionStyle>()
+      textView.text = mentions?.joinToString() ?: getString(R.string.no_mention)
     }
   }
 }

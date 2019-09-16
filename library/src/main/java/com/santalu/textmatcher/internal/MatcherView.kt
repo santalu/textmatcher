@@ -11,7 +11,7 @@ import com.santalu.textmatcher.rule.Rule
  * Created by fatih.santalu on 9/9/2019
  */
 
-internal interface MatcherView {
+interface MatcherView {
 
   /**
    * Used to attach matcher
@@ -60,9 +60,7 @@ internal interface MatcherView {
    * Used to replace matching target on selection
    * @optional
    */
-  fun replace(newText: String): Boolean {
-    return false
-  }
+  fun replace(newText: String): Boolean = false
 
   /**
    * Used to retrieve current selected string's start position

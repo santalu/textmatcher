@@ -17,6 +17,7 @@
   <string name="hint_hashtag">Enter any text with hashtag</string>
 
   <string name="action_replace">Replace</string>
+  <string name="action_show_all">Show All</string>
 
   <string name="sample_text">This is @mention and this is #hashtag. This is @another.mention which is not allowed if not specified manually in the #rule\'s #allowedCharacters</string>
 </resources>

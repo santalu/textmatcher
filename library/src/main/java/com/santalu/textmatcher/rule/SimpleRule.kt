@@ -38,20 +38,20 @@ open class SimpleRule @JvmOverloads constructor(
   }
 
   override fun getTargetStart(text: CharSequence, start: Int): Int {
-    loop@ for (index in start downTo 0) {
+    for (index in start downTo 0) {
       text.getOrNull(index)
-          ?.takeIf { prefixes.contains(it) || it.isWhitespace() }
-          ?.let { return index }
+        ?.takeIf { prefixes.contains(it) || it.isWhitespace() }
+        ?.let { return index }
     }
     return start
   }
 
   override fun getTargetEnd(text: CharSequence, start: Int): Int {
     val end = text.length
-    loop@ for (index in start until end) {
+    for (index in start until end) {
       text.getOrNull(index)
-          ?.takeIf { allowedCharacters?.contains(it) == true || it.isWhitespace() }
-          ?.let { return index }
+        ?.takeIf { allowedCharacters?.contains(it) == true || it.isWhitespace() }
+        ?.let { return index }
     }
     return end
   }
@@ -61,18 +61,18 @@ open class SimpleRule @JvmOverloads constructor(
 
     // clear previous styles in case targets are invalidated
     text.getSpans(0, text.length, style::class.java)
-        .forEach {
-          text.removeSpan(it)
-        }
+      .forEach {
+        text.removeSpan(it)
+      }
 
     // apply new styles
     pattern.findAll(text, 0)
-        .forEach {
-          if (it.value.length == 1) return@forEach
+      .forEach {
+        if (it.value.length == 1) return@forEach
 
-          val start = it.range.first
-          val end = it.range.last + 1
-          text.setSpan(style.clone(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        }
+        val start = it.range.first
+        val end = it.range.last + 1
+        text.setSpan(style.clone(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+      }
   }
 }

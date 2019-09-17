@@ -14,6 +14,9 @@ typealias OnMatchListener = (Rule, String?) -> Unit
 
 typealias OnMatchClickListener = (String) -> Unit
 
+/**
+ * Finds all matching targets by given style
+ */
 inline fun <reified T : Style> MatcherView.findMatches(): List<String>? {
   val text = getEditableText() ?: getText()?.toSpannable()
   return text?.let { editable ->

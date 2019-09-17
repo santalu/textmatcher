@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import com.google.android.material.textfield.TextInputEditText
 import com.santalu.textmatcher.OnMatchClickListener
 import com.santalu.textmatcher.OnMatchListener
-import com.santalu.textmatcher.internal.MatcherPresenterImpl
+import com.santalu.textmatcher.internal.MatcherPresenter
 import com.santalu.textmatcher.internal.MatcherView
 import com.santalu.textmatcher.rule.Rule
 
@@ -15,7 +15,7 @@ import com.santalu.textmatcher.rule.Rule
 
 class MatcherInputEditText : TextInputEditText, MatcherView {
 
-  private val presenter = MatcherPresenterImpl(this)
+  private val presenter = MatcherPresenter(this)
 
   constructor(context: Context?) : super(context)
 
@@ -23,11 +23,6 @@ class MatcherInputEditText : TextInputEditText, MatcherView {
 
   constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
       super(context, attrs, defStyleAttr)
-
-  override fun onAttachedToWindow() {
-    super.onAttachedToWindow()
-    presenter.attach()
-  }
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()
@@ -54,11 +49,6 @@ class MatcherInputEditText : TextInputEditText, MatcherView {
     presenter.removeRule(rule)
   }
 
-  /**
-   * Replaces matching target in selection with given string
-   *
-   * Not: if there's no matching target in selection does nothing
-   */
   override fun replace(newText: String): Boolean {
     return presenter.replace(newText)
   }

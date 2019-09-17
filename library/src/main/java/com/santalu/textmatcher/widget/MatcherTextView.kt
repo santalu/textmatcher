@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import com.santalu.textmatcher.OnMatchClickListener
-import com.santalu.textmatcher.internal.MatcherPresenterImpl
+import com.santalu.textmatcher.internal.MatcherPresenter
 import com.santalu.textmatcher.internal.MatcherView
 import com.santalu.textmatcher.rule.Rule
 
@@ -14,7 +14,7 @@ import com.santalu.textmatcher.rule.Rule
 
 class MatcherTextView : AppCompatTextView, MatcherView {
 
-  private val presenter = MatcherPresenterImpl(this)
+  private val presenter = MatcherPresenter(this)
 
   constructor(context: Context?) : super(context)
 
@@ -22,11 +22,6 @@ class MatcherTextView : AppCompatTextView, MatcherView {
 
   constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
       super(context, attrs, defStyleAttr)
-
-  override fun onAttachedToWindow() {
-    super.onAttachedToWindow()
-    presenter.attach()
-  }
 
   override fun onDetachedFromWindow() {
     super.onDetachedFromWindow()

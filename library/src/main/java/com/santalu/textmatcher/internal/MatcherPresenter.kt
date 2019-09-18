@@ -110,7 +110,7 @@ internal class MatcherPresenter(private val view: MatcherView) {
 
       val editable = view.getEditableText()
       if (editable.isNullOrEmpty()) {
-        view.setText(newText)
+        view.setText("$newText ")
         it.isMatchingEnabled = true
         return true
       }
@@ -124,6 +124,12 @@ internal class MatcherPresenter(private val view: MatcherView) {
 
         if (rule.isMatches(target)) {
           editable.replace(start, end, newText)
+          // add whitespace at the end if needed
+          val cursor = start + newText.length
+          val following = editable.getOrNull(cursor)
+          if (following == null || !following.isWhitespace()) {
+            editable.insert(cursor, " ")
+          }
           it.isMatchingEnabled = true
           return true
         }

@@ -26,9 +26,9 @@ open class SimpleRule @JvmOverloads constructor(
     val start = "(?<=\\s|^)"
     val end = "(?=[']\\p{L}+|[.,;:?!](?:\\s|\$)|\\s|\$)"
     val middle = if (allowedCharacters.isNullOrEmpty()) {
-      "([$prefixes]\\p{L}*)"
+      "([$prefixes][\\p{L}\\d]*)"
     } else {
-      "([$prefixes]\\p{L}+[$allowedCharacters]\\p{L}+|[$prefixes]\\p{L}*)"
+      "([$prefixes][\\p{L}\\d]+[$allowedCharacters]\\p{L}+|[$prefixes][\\p{L}\\d]*)"
     }
     Regex(start + middle + end)
   }

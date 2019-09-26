@@ -51,7 +51,7 @@ There are 3 built-in rules for easy implementation. This can be changed in futur
 
 #### Widgets
 
-There's 3 built-in widgets for easy implementation. This can be changed in future according to needs.
+There are 3 built-in widgets for easy implementation. This can be changed in future according to needs.
 
 1. [`MatcherTextView`](https://github.com/santalu/textmatcher/blob/master/library/src/main/java/com/santalu/textmatcher/widget/MatcherTextView.kt)
 
@@ -100,7 +100,7 @@ allprojects {
 
 ```
 dependencies {
-  implementation 'com.github.santalu:textmatcher:1.0.4'
+  implementation 'com.github.santalu:textmatcher:1.0.5'
 }
 ```
 ## License

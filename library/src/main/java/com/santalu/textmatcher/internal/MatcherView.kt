@@ -24,8 +24,7 @@ interface MatcherView {
   fun removeTextChangedListener(watcher: TextWatcher?)
 
   /**
-   * Used to retrieve match result
-   * @optional
+   * @optional: Used to retrieve match result
    */
   fun setOnMatchListener(listener: OnMatchListener?) {}
 
@@ -35,12 +34,12 @@ interface MatcherView {
   fun setOnMatchClickListener(listener: OnMatchClickListener?)
 
   /**
-   * Used to add rule to matcher's collection
+   * Used to add [rule] to matcher's collection
    */
   fun addRule(rule: Rule)
 
   /**
-   * Used to remove the rule from matcher's collection
+   * Used to remove the [rule] from matcher's collection
    */
   fun removeRule(rule: Rule)
 
@@ -57,8 +56,7 @@ interface MatcherView {
   fun setText(text: CharSequence?)
 
   /**
-   * Used to replace matching target on selection
-   * @optional
+   * @optional: Used to replace matching target on selection
    */
   fun replace(newText: String): Boolean = false
 

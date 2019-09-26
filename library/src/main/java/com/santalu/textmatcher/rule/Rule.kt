@@ -7,13 +7,13 @@ import android.text.Editable
  *
  * Defines target boundaries and matching requirements
  *
- * It's also possible to customize visual styles of target via providing custom @Style
+ * It's also possible to customize visual styles of target via providing custom [Style]
  */
 
 abstract class Rule {
 
   /**
-   * Matches given target which composed from boundary of @getTargetStart and @getTargetEnd results
+   * Matches given target which composed from boundary of [getTargetStart] and [getTargetEnd] results
    */
   abstract fun isMatches(target: String): Boolean
 

@@ -7,7 +7,7 @@ import com.santalu.textmatcher.rule.Rule
 /**
  * Created by fatih.santalu on 9/9/2019
  *
- * Simple text watcher matches appropriate targets according to given @Rule
+ * Simple text watcher matches appropriate targets according to given [rules]
  */
 
 class TextMatcher(
@@ -33,7 +33,7 @@ class TextMatcher(
     if (!isMatchingEnabled) return
 
     rules.forEach {
-      if (text.isNullOrEmpty()) return action(it, null)
+      if (text.isNullOrEmpty()) return@forEach action(it, null)
 
       val position = if (before > count) start - 1 else start
 

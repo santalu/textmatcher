@@ -9,11 +9,11 @@ import com.santalu.textmatcher.style.Style
  *
  * Simple rule which uses regex to define targets
  *
- * @prefixes: Used to determine target's start. Target's end is always considered as whitespace
+ * [prefixes]: Used to determine target's start. Target's end is always considered as whitespace
  *
- * @allowedCharacters: Used to allow special characters in target definition
+ * [allowedCharacters]: Used to allow special characters in target definition
  *
- * @style: Used to customize visual appearances of matching targets
+ * [style]: Used to customize visual appearances of matching targets
  */
 
 open class SimpleRule @JvmOverloads constructor(

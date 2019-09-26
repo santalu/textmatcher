@@ -9,7 +9,7 @@ import com.santalu.textmatcher.internal.MatcherView
  *
  * Customizes visual appearance or behaviour of targets
  *
- * To customize appearance of targets override @updateDrawState method
+ * To customize appearance of targets override [updateDrawState] method
  */
 
 abstract class Style : ClickableSpan(), Cloneable {

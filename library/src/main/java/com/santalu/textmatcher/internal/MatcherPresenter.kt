@@ -24,7 +24,7 @@ internal class MatcherPresenter(private val view: MatcherView) {
     }
 
   /**
-   * Re-instantiates matcher with current rules and attaches to view
+   * Re-instantiates [matcher] with current [rules] and attaches to view
    */
   fun attach() {
     if (rules.isNullOrEmpty()) return
@@ -35,7 +35,7 @@ internal class MatcherPresenter(private val view: MatcherView) {
   }
 
   /**
-   * Releases the matcher and detaches from view
+   * Releases the [matcher] and detaches from view
    */
   fun detach() {
     view.removeTextChangedListener(matcher)
@@ -43,14 +43,14 @@ internal class MatcherPresenter(private val view: MatcherView) {
   }
 
   /**
-   * Triggers @OnMatchListener
+   * Triggers [matchListener]
    */
   private fun notifyMatch(rule: Rule, text: String?) {
     matchListener?.invoke(rule, text)
   }
 
   /**
-   * Triggers @OnMatchClickListener
+   * Triggers [matchClickListener]
    */
   fun notifyClick(text: String) {
     matchClickListener?.invoke(text)
@@ -63,7 +63,7 @@ internal class MatcherPresenter(private val view: MatcherView) {
   }
 
   /**
-   * Detaches and then re-attaches matcher
+   * Detaches and then re-attaches [matcher]
    */
   private fun invalidateMatcher() {
     detach()
@@ -80,7 +80,7 @@ internal class MatcherPresenter(private val view: MatcherView) {
   }
 
   /**
-   * Adds rule into the collection if not already exist
+   * Adds [rule] into the [rules] if not already exist
    */
   fun addRule(rule: Rule) {
     if (rules.contains(rule)) return
@@ -90,7 +90,7 @@ internal class MatcherPresenter(private val view: MatcherView) {
   }
 
   /**
-   * Removes rule from to collection
+   * Removes [rule] from to [rules]
    */
   fun removeRule(rule: Rule) {
     if (!rules.contains(rule)) return
@@ -100,9 +100,9 @@ internal class MatcherPresenter(private val view: MatcherView) {
   }
 
   /**
-   * Replaces matching target in selection with given string
+   * Replaces matching target in selection with [newText]
    *
-   * Not: if there's no matching target in selection does nothing
+   * Not: does nothing if there's no matching target in selection
    */
   fun replace(newText: String): Boolean {
     matcher?.let {

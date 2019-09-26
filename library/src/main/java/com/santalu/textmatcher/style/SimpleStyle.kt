@@ -7,7 +7,7 @@ import androidx.annotation.ColorInt
 /**
  * Created by fatih.santalu on 9/9/2019
  *
- * To customize more override @updateDrawState method
+ * To customize more override [updateDrawState] method
  */
 
 open class SimpleStyle(

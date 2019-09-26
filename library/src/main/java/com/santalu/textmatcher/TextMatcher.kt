@@ -33,9 +33,12 @@ class TextMatcher(
     if (!isMatchingEnabled) return
 
     rules.forEach {
-      if (text.isNullOrEmpty()) return@forEach action(it, null)
+      if (text.isNullOrEmpty()) {
+        action(it, null)
+        return@forEach
+      }
 
-      val position = if (before > count) start - 1 else start
+      val position = if (start > 0 && before > count) start - 1 else start
 
       // find closest target's boundaries from selection
       val targetStart = it.getTargetStart(text, position)

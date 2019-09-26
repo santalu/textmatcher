@@ -100,7 +100,7 @@ allprojects {
 
 ```
 dependencies {
-  implementation 'com.github.santalu:textmatcher:1.0.5'
+  implementation 'com.github.santalu:textmatcher:1.0.6'
 }
 ```
 ## License
